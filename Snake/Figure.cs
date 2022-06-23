@@ -17,5 +17,18 @@ namespace Snake
                 i.Draw();
             }
         }
+
+        internal bool IsHit(Figure figure)
+        {
+            foreach (var thisPoint in pList)
+            {
+                foreach (var point in figure.pList)
+                {
+                    if (thisPoint.IsHit(point))
+                        return true;
+                }
+            }
+            return false;
+        }
     }
 }

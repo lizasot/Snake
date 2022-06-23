@@ -40,7 +40,7 @@ namespace Snake
                     break;
 
                 case Direction.Up:
-                    y += dist;
+                    y += -dist;
                     break;
 
                 case Direction.Right:
@@ -48,7 +48,7 @@ namespace Snake
                     break;
 
                 case Direction.Down:
-                    y += -dist;
+                    y += dist;
                     break;
             }
         }
@@ -56,6 +56,17 @@ namespace Snake
         {
             this.x += x;
             this.y += y;
+        }
+
+        public void Clear()
+        {
+            symb = ' ';
+            Draw();
+        }
+
+        public bool IsHit(Point point)
+        {
+            return x == point.x && y == point.y;
         }
     }
 }

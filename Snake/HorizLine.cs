@@ -11,7 +11,7 @@ namespace Snake
         public HorizLine(int x, int y, int len, char symb)
         {
             pList = new List<Point>();
-            for (int i = x; i < len + x; i++)
+            for (int i = x; i <= len + x; i++)
             {
                 Point p = new Point(i, y, symb);
                 pList.Add(p);
